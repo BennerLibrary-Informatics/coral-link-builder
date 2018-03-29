@@ -52,7 +52,9 @@ function print_subject($sid, $cid, $url, $tut, $graphic, $desc, $proxy = "", $op
         $result['trial'] = FALSE;
 
         if ($result['ezproxy'] == 'yes') {
-            $proxyUrl = ($proxy == "") ? "https://login.proxy.olivet.edu/login?url=" : "";
+            $proxyUrl = "https://login.proxy.olivet.edu/login?url=";
+        } else {
+            $proxyUrl = "";
         }
         
         if (date("Y-m-d", strtotime(date("Y-m-d", strtotime($result['updateDate'])) . " +6 month")) >=
